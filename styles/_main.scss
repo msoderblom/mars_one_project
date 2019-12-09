@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: $color--text;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+main {
+  max-inline-size: 1440px;
+  margin: 0 auto 0 auto;
+  background: $color--background-1;
+
+  img {
+    @extend %img-settings;
+  }
+}
+h3 {
+  @include text-properties(1.7rem, 500, $color--complementary-1, 0.9px);
+}

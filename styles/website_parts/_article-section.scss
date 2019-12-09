@@ -1,0 +1,21 @@
+.article-section {
+  display: grid;
+  gap: 1rem;
+
+  padding: 5% 3% 5% 3%;
+  &__article {
+    display: grid;
+    gap: 1rem;
+    background: $color--main-1;
+
+    &__text-wrapper {
+      padding: 5% 3% 5% 3%;
+      &__btn {
+        padding: 10px 20px 10px 20px;
+        background: transparent;
+        border-radius: 10px;
+        border: solid 1px $color--main-2;
+      }
+    }
+  }
+}

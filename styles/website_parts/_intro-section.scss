@@ -1,0 +1,31 @@
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 1 320px;
+  flex-direction: row-reverse;
+  /*   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+ */
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5% 5% 7% 5%;
+    min-width: 320px;
+
+    width: 100%;
+    @media (min-width: 868px) {
+      inline-size: 55%;
+      background: blue;
+    }
+  }
+  &__img {
+    @extend %img-settings;
+    min-width: 320px;
+
+    @media (min-width: 868px) {
+      width: 45%;
+    }
+  }
+}

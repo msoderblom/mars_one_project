@@ -1,0 +1,13 @@
+@mixin text-properties($size, $weight, $color, $spacing) {
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+  letter-spacing: $spacing;
+}
+
+%img-settings {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
