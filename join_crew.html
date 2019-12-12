@@ -25,7 +25,6 @@
           </li>
         </ul>
       </nav>
-      <div class="main-header__oval join-crew"></div>
       <div class="main-header__text-wrapper join-crew">
         <h1 class="main-header__text-wrapper__title join-crew">
           Be brave, join the journey!
@@ -39,6 +38,10 @@
     <main>
       <section class="join-crew-section">
         <h2 class="join-crew-section__title">Join us in the mission</h2>
+        <p class="join-crew-section__text">
+          Be part of the mission. Send us your motivation of why just you should
+          be the next space traveler
+        </p>
         <form class="joining-form" action="./">
           <label for="first_name" class="joining-form__label">
             First name
@@ -85,16 +88,20 @@
               class="joining-form__input"
             />
           </label>
-          <label for="motivation" class="joining-form__label">
+          <label
+            for="motivation"
+            class="joining-form__label joining-form__label--wide"
+          >
             Motivation
+            <textarea
+              name="motivation"
+              id="motivation"
+              cols="30"
+              rows="10"
+              class="joining-form__textarea"
+            ></textarea>
           </label>
-          <textarea
-            name="motivation"
-            id="motivation"
-            cols="30"
-            rows="10"
-            class="joining-form__textarea"
-          ></textarea>
+
           <button type="submit" class="joining-form__submit">Submit</button>
         </form>
       </section>

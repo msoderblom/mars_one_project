@@ -1,0 +1,107 @@
+.join-crew-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 5%;
+  &__title {
+    text-align: center;
+    @include text-properties(2rem, 800, $color--complementary-1, 1.3px);
+
+    @media (min-width: 768px) {
+      font-size: 2.57rem;
+    }
+  }
+  &__text {
+    text-align: center;
+    max-width: 510px;
+    @include text-properties(1.2rem, 500, $color--main-2, 0.9px);
+
+    @media (min-width: 768px) {
+      font-size: 1.7rem;
+    }
+  }
+}
+
+.joining-form {
+  background: $color--main-1;
+  display: flex;
+
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1180px;
+  padding: 25px 2%;
+
+  @media (min-width: 445px) {
+    width: 83%;
+    padding: 5% 2%;
+  }
+  @media (min-width: 960px) {
+    width: 83%;
+    padding: 2.2%;
+  }
+
+  &__label {
+    font-weight: 700;
+    color: $color--main-2;
+    font-size: 14px;
+    flex-basis: 100%;
+    margin: 0 2% 30px 2%;
+
+    @media (min-width: 445px) {
+      min-width: 165px;
+      flex: 1 2 30%;
+    }
+    @media (min-width: 960px) {
+      margin: 0 2.5% 55px 2.5%;
+      max-width: 370px;
+    }
+
+    &[for="birth_date"] {
+      @media (min-width: 460px) {
+        flex: 1 1 18%;
+        max-width: 207px;
+      }
+    }
+    &--wide {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+  }
+  &__input {
+    display: block;
+    width: 100%;
+    height: 40px;
+    padding: 10px 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    border: solid 1px $color--main-2;
+    background: transparent;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.6px;
+  }
+  &__textarea {
+    display: block;
+    width: 100%;
+
+    margin-top: 15px;
+    border-radius: 5px;
+    padding: 10px 15px;
+    border: solid 1px $color--main-2;
+    @media (min-width: 460px) {
+      min-height: 270px;
+    }
+  }
+  &__submit {
+    flex-basis: 128px;
+    align-self: center;
+    margin: auto;
+    padding: 9px 21px 9px 21px;
+    border: solid 1px $color--main-2;
+    border-radius: 10px;
+    font-weight: 500;
+    color: $color--main-2;
+    max-width: 128px;
+    background: transparent;
+  }
+}

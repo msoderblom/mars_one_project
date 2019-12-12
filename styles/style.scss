@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
 @import "./variables";
 @import "./mixins_extends";
 @import "./main";
@@ -5,3 +6,6 @@
 @import "./website_parts/intro-section";
 @import "./website_parts/article-section";
 @import "./website_parts/footer";
+
+@import "./website_parts/faq-section";
+@import "./website_parts/join-crew-section";

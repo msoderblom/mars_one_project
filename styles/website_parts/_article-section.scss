@@ -1,20 +1,90 @@
+$screen-size--medium: 550px;
+
 .article-section {
   display: grid;
   gap: 1rem;
+  grid-template: repeat(4, auto) / 1fr;
+
+  @media (min-width: $screen-size--medium) {
+  }
+
+  @media (min-width: 990px) {
+    grid-template: auto repeat(2, minmax(340px, auto)) / 2fr 0.82fr;
+    padding: 6.5%;
+    gap: 35px;
+  }
+  &__title {
+    width: 100%;
+    text-align: center;
+    grid-area: 1/1/2/-1;
+  }
 
   padding: 5% 3% 5% 3%;
   &__article {
     display: grid;
+    grid-template: repeat(2, auto) / 1fr;
     gap: 1rem;
     background: $color--main-1;
 
+    &--wide {
+      @media (min-width: $screen-size--medium) {
+        grid-template: auto/ 2fr 3fr;
+      }
+    }
+    &--tall {
+      @media (min-width: $screen-size--medium) {
+        grid-template: auto/ 2fr 3fr;
+        div {
+          order: -1;
+        }
+      }
+      @media (min-width: 990px) {
+        grid-row: span 2;
+        grid-template: auto auto/ 1fr;
+        div {
+          order: 2;
+        }
+      }
+    }
+
     &__text-wrapper {
       padding: 5% 3% 5% 3%;
+
+      @media (min-width: $screen-size--medium) {
+        order: 1;
+      }
+
       &__btn {
         padding: 10px 20px 10px 20px;
         background: transparent;
         border-radius: 10px;
         border: solid 1px $color--main-2;
+      }
+    }
+
+    &__img {
+      max-height: 340px;
+      @extend %img-settings;
+
+      &--small {
+        object-fit: unset;
+        max-width: 250px;
+        max-height: 250px;
+        align-self: center;
+        justify-self: center;
+        margin: 10%;
+
+        @media (min-width: $screen-size--medium) {
+          max-width: 158px;
+          max-height: 158px;
+        }
+
+        &.sun {
+          max-width: unset;
+          max-height: unset;
+          margin: unset;
+          padding: 10%;
+        }
       }
     }
   }
