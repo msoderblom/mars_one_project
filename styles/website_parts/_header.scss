@@ -10,23 +10,42 @@
   &::after {
     position: absolute;
     content: "";
-    bottom: 35vh;
-    left: -40vw;
+    bottom: 26vh;
+    left: -18vw;
     border-radius: 50%;
-    border: 15px solid $color--complementary-2;
-    width: 170vw;
-    height: 120vw;
-    min-height: 600px;
+    border: 20px solid $color--complementary-2;
+    width: 160vw;
+    height: 122vw;
+    min-height: 770px;
+    border-inline-start-width: 10px;
+    border-inline-end-width: 1px;
     /* width: 200vw;
     height: 65vh; */
 
-    transform: rotate(25deg);
+    transform: rotate(4deg);
     background-image: linear-gradient(
       182deg,
       #00132c 61%,
       rgba(21, 52, 98, 0.9)
     );
   }
+
+  /*  &::before {
+    position: absolute;
+    content: "";
+    bottom: 24vh;
+    left: -18vw;
+    border-radius: 50%;
+    width: 160vw;
+    height: 122vw;
+    min-height: 770px;
+    border-inline-start-width: 10px;
+    border-inline-end-width: 1px;
+  
+
+    transform: rotate(4deg);
+    background: $color--complementary-2;
+  } */
 
   &.homepage {
     background-image: linear-gradient(
@@ -53,11 +72,20 @@
       url(../../images/page-3/hero-3.jpg);
 
     &::after {
+      transition: all 0.5s;
       /*       transform: rotate(-165deg);
       bottom: -20vh; */
-      transform: rotate(-160deg);
+      transform: rotate(-190deg);
       bottom: unset;
-      top: 65vh;
+      top: 40vh;
+      left: -45vw;
+      width: 165vw;
+      border-inline-start-width: 1px;
+      border-inline-end-width: 30px;
+      @media (min-width: 550px) {
+        transform: rotate(-155deg);
+        top: 50vh;
+      }
     }
   }
 
@@ -86,44 +114,82 @@
     z-index: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: start;
+
     gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    height: 48vh;
 
-    @media (min-width: 768px) {
-      align-items: end;
-      justify-content: center;
+    @media (min-width: 700px) {
       margin-right: 16%;
-      height: 65vh;
+      align-items: flex-end;
+      height: 55vh;
+      &.faq {
+        margin-right: 10%;
+      }
     }
-
     &.join-crew {
-      justify-content: end;
+      height: 92vh;
+      justify-content: flex-end;
+      align-items: center;
+      @media (min-width: 500px) {
+        margin-left: 9%;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
     }
 
     &__title {
+      transition: all 1s;
       @include text-properties(2.5rem, 800, $color--main-1, 2.2px);
       display: inline-block;
-      width: 90%;
-      padding-bottom: 5px;
+      width: 70%;
+      padding-bottom: 15px;
       margin: 0;
       border-bottom: 4px solid $color--main-1;
 
-      @media (min-width: 768px) {
-        width: 30%;
+      @media (min-width: 500px) {
+        width: 440px;
         font-size: 60px;
+      }
+
+      &.faq {
+        @media (min-width: 500px) {
+          width: 511px;
+        }
+      }
+      &.join-crew {
+        font-size: 2.5rem;
+        @media (min-width: 550px) {
+          width: 470px;
+          font-size: 60px;
+        }
       }
     }
     &__subheading {
+      transition: all 1s;
       @include text-properties(1.8rem, 700, $color--complementary-2, 1.5px);
-      width: 90%;
+      width: 80%;
+      padding-left: 5%;
       margin: 0;
+      &.faq {
+        @media (min-width: 500px) {
+          width: 515px;
+        }
+      }
 
-      @media (min-width: 768px) {
-        width: 30%;
+      @media (min-width: 500px) {
+        width: 440px;
+        font-size: 40px;
+        padding-left: unset;
       }
       &.join-crew {
         margin-bottom: 30px;
+        font-size: 1.8rem;
+        @media (min-width: 550px) {
+          width: 440px;
+          font-size: 40px;
+        }
       }
     }
   }
@@ -134,16 +200,36 @@
   display: flex;
   justify-content: space-between;
   background: $color--nav;
-  padding: 0 10px 0 10px;
+  padding: 5px 15px;
+
+  @media (min-width: 550px) {
+    padding: 15px 30px;
+  }
+
+  .logo {
+    width: 58px;
+    @media (min-width: 550px) {
+      width: 68px;
+    }
+  }
   &__link-list {
     display: flex;
     justify-content: space-around;
     list-style: none;
     padding: 0;
-    gap: 1rem;
+
+    margin: 8px 0;
 
     &__item {
-      padding: 3px 0 3px 0;
+      padding: 0 5px;
+      margin: 3px 0 3px 8px;
+      padding-top: 8px;
+      font-size: 12px;
+      @media (min-width: 550px) {
+        margin: 0 0 0 30px;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
       a {
         color: $color--main-1;
         font-weight: bold;
@@ -151,7 +237,8 @@
       }
 
       &--active {
-        border-bottom: 2px solid $color--complementary-1;
+        border-bottom: 3px solid $color--complementary-1;
+        padding-bottom: 5px;
       }
     }
   }

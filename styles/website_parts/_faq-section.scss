@@ -15,7 +15,12 @@
     }
   }
 
+  article:last-of-type {
+    box-shadow: none;
+  }
+
   &__article {
+    @extend %card-style;
     display: grid;
 
     @media (min-width: 768px) {
@@ -49,6 +54,13 @@
 
     &__text-wrapper {
       padding: 8%;
+      &__list {
+        &__item {
+          &::marker {
+            color: $color--complementary-1;
+          }
+        }
+      }
     }
     &__img-wrapper {
       max-width: 460px;
@@ -58,12 +70,82 @@
     }
     &__solar-system {
       max-width: 460px;
+      display: grid;
+      grid: 1fr / 1fr;
+      place-items: center;
 
       background-image: radial-gradient(
         circle at 50% 39%,
         #072142,
         #00132c 101%
       );
+
+      // Variabler
+      $sun-size: 48px;
+      $orb-earth-size: 150px;
+      $orb-mars-size: 300px;
+      $planet-earth-size: 30px;
+      $planet-mars-size: $planet-earth-size;
+
+      // mixin
+      @mixin square-size($size) {
+        height: $size;
+        width: $size;
+      }
+
+      %center {
+        grid-column: 1;
+        grid-row: 1;
+      }
+
+      img {
+        object-fit: cover;
+      }
+
+      .orb {
+        @extend %center;
+        border: 1px dashed grey;
+        border-radius: 100%;
+        animation: move-planet linear infinite;
+
+        &.earth {
+          @include square-size($orb-earth-size);
+          animation-duration: 7s;
+        }
+        &.mars {
+          @include square-size($orb-mars-size);
+          animation-duration: 10s;
+        }
+      }
+
+      &__sun {
+        @include square-size($sun-size);
+        @extend %center;
+      }
+
+      &__earth,
+      &__mars {
+        position: absolute;
+        left: 50%;
+        top: -15px;
+      }
+      &__earth {
+        @include square-size($planet-earth-size);
+        animation-duration: 7s;
+      }
+      &__mars {
+        @include square-size($planet-mars-size);
+
+        animation-duration: 7s;
+      }
+
+      // Animation
+      @keyframes move-planet {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
       @media (min-width: 768px) {
         order: -1;
       }

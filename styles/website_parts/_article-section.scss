@@ -21,10 +21,11 @@ $screen-size--medium: 550px;
 
   padding: 5% 3% 5% 3%;
   &__article {
+    @extend %card-style;
+
     display: grid;
     grid-template: repeat(2, auto) / 1fr;
     gap: 1rem;
-    background: $color--main-1;
 
     &--wide {
       @media (min-width: $screen-size--medium) {
