@@ -54,6 +54,10 @@
 
     &__text-wrapper {
       padding: 8%;
+
+      &__title {
+        @include text-properties(1.7rem, 500, $color--complementary-1, 0.9px);
+      }
       &__list {
         &__item {
           &::marker {

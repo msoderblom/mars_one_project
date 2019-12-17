@@ -17,6 +17,3 @@ main {
   margin: 0 auto 0 auto;
   background: $color--background-1;
 }
-h3 {
-  @include text-properties(1.7rem, 500, $color--complementary-1, 0.9px);
-}
