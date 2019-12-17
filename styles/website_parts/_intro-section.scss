@@ -29,7 +29,8 @@
     }
     &__title {
       @include text-properties(27px, 800, $color--complementary-1, 1.3px);
-
+      margin-top: 20px;
+      margin-bottom: 0;
       @media (min-width: 550px) {
         margin: 0;
       }
