@@ -205,11 +205,12 @@
   @media (min-width: 550px) {
     padding: 15px 30px;
   }
-
-  .logo {
+  &__logo-wrapper {
     width: 58px;
-    @media (min-width: 550px) {
-      width: 68px;
+
+    .logo {
+      @extend %img-settings;
+      object-fit: contain;
     }
   }
   &__link-list {

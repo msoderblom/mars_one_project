@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
-.intro-section__img, .article-section__article__img, .faq-section__article__img-wrapper__img {
+.navigation__logo-wrapper .logo, .intro-section__img, .article-section__article__img, .faq-section__article__img-wrapper__img {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -290,14 +290,13 @@ main {
   }
 }
 
-.navigation .logo {
+.navigation__logo-wrapper {
   width: 58px;
 }
 
-@media (min-width: 550px) {
-  .navigation .logo {
-    width: 68px;
-  }
+.navigation__logo-wrapper .logo {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .navigation__link-list {
