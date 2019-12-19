@@ -3,7 +3,20 @@
   background: $color--main-2;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
+  height: 315px;
+  padding: 0 20px;
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+  }
+  &__disclaimer {
+    font-size: 12px;
+    & .text-enhancer {
+      color: #f97c7c;
+      font-weight: 700;
+    }
+  }
 }
