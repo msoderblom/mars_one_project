@@ -17,30 +17,34 @@
     grid-area: 1 / 1;
     content: "";
     display: block;
-    height: 250vh;
-    width: 187vw;
-    bottom: -136vh;
-    left: -40vw;
+    bottom: 0vh;
+    top: -200px;
+    right: -35vw;
+    left: -30vw;
+
     background-image: linear-gradient(
       to bottom,
       #00132c 1%,
       rgba(21, 52, 98, 0.9)
     );
 
-    clip-path: ellipse(43% 33% at 52% 1%);
-    transform: rotate(1deg);
+    clip-path: ellipse(57% 56% at 53% 19%);
+
+    transform: rotate(15deg);
+    transition: all 0.5s ease-in-out;
 
     @media (min-width: 768px) {
-      left: -35vw;
+      left: -30vw;
+      bottom: 10vh;
+      right: -4vw;
     }
   }
 
   &::before {
-    transform: rotate(1.2deg) translateY(50px);
+    transform: rotate(16deg) translateY(20px);
     background: rgba(67, 109, 172, 0.8);
-    bottom: -132vh;
     @media (min-height: 750px) {
-      transform: rotate(1.2deg) translateY(65px);
+      transform: rotate(16deg) translateY(20px);
     }
   }
 
@@ -70,21 +74,20 @@
 
     &::before,
     &::after {
-      transition: all 0.5s ease-in-out;
-
-      width: 225vw;
-      bottom: -33vh;
-      left: -69vw;
-
-      transform: rotate(181deg);
+      bottom: -45vh;
+      left: -22vw;
+      top: 12vh;
+      right: -20vw;
+      transform: rotate(193deg);
       @media (min-width: 768px) {
-        width: 195vw;
+        top: 17vh;
+
+        right: -11vw;
       }
     }
 
     &::before {
-      transform: rotate(181deg) translateY(40px);
-      bottom: -35vh;
+      transform: rotate(194deg) translateY(30px);
     }
   }
 
@@ -108,19 +111,15 @@
       }
     }
     &.join-crew {
-      height: 85vh;
+      height: 100%;
+      padding-bottom: 4vh;
       justify-content: flex-end;
       align-items: center;
       @media (min-width: 500px) {
         margin-left: 9%;
         justify-content: flex-end;
         align-items: flex-start;
-      }
-      @media (max-height: 750px) and (max-width: 700px) {
-        height: 92vh;
-      }
-      @media (min-height: 500px) and (max-height: 800px) and (min-width: 490px) and (max-width: 1000px) {
-        min-height: 110vh;
+        padding-bottom: 10vh;
       }
     }
 
@@ -169,7 +168,6 @@
         padding-left: unset;
       }
       &.join-crew {
-        margin-bottom: 30px;
         font-size: 1.8rem;
 
         @media (min-width: 570px) {
