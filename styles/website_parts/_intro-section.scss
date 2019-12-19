@@ -7,10 +7,6 @@
     flex-direction: row-reverse;
   }
 
-  /*   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
- */
-
   &__text-wrapper {
     background: $color--main-1;
     display: flex;
