@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700,800&display=swap");
-.navigation__logo-wrapper .logo, .intro-section__img, .article-section__article__img, .faq-section__article__img-wrapper__img {
+.navigation__logo-wrapper .logo, .intro-section__img, .article-section__article__img, .faq-section__article__img, .faq-section__article__solar-system {
   -o-object-fit: cover;
      object-fit: cover;
   width: 100%;
@@ -43,7 +43,8 @@ main {
   display: grid;
   -ms-grid-rows: auto 1fr;
       grid-template-rows: auto 1fr;
-  min-height: 100vh;
+  min-height: 550px;
+  height: 100vh;
   background-position: center;
   background-size: cover;
   /*  &::before {
@@ -85,6 +86,13 @@ main {
   } */
 }
 
+@media (min-height: 550px) and (max-height: 800px) and (min-width: 500px) {
+  .main-header {
+    min-height: 120vh;
+    border: solid red 5px;
+  }
+}
+
 .main-header::after {
   position: absolute;
   content: "";
@@ -94,7 +102,7 @@ main {
   border: 20px solid #436dac;
   width: 160vw;
   height: 122vw;
-  min-height: 770px;
+  min-height: 900px;
   border-inline-start-width: 10px;
   border-inline-end-width: 1px;
   /* width: 200vw;
@@ -159,6 +167,7 @@ main {
       -ms-flex-pack: center;
           justify-content: center;
   height: 48vh;
+  min-height: 250px;
 }
 
 @media (min-width: 700px) {
@@ -210,14 +219,14 @@ main {
   border-bottom: 4px solid #ffffff;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 570px) {
   .main-header__text-wrapper__title {
     width: 440px;
     font-size: 60px;
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 570px) {
   .main-header__text-wrapper__title.faq {
     width: 511px;
   }
@@ -227,7 +236,7 @@ main {
   font-size: 2.5rem;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 570px) {
   .main-header__text-wrapper__title.join-crew {
     width: 470px;
     font-size: 60px;
@@ -246,13 +255,13 @@ main {
   margin: 0;
 }
 
-@media (min-width: 500px) {
+@media (min-width: 570px) {
   .main-header__text-wrapper__subheading.faq {
     width: 515px;
   }
 }
 
-@media (min-width: 500px) {
+@media (min-width: 570px) {
   .main-header__text-wrapper__subheading {
     width: 440px;
     font-size: 40px;
@@ -265,7 +274,7 @@ main {
   font-size: 1.8rem;
 }
 
-@media (min-width: 550px) {
+@media (min-width: 570px) {
   .main-header__text-wrapper__subheading.join-crew {
     width: 440px;
     font-size: 40px;
@@ -684,20 +693,48 @@ main {
   -ms-grid-columns: 1fr;
       grid-template: repeat(5, auto)/1fr;
   gap: 1rem;
+  padding-top: 6%;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 650px) {
+  .faq-section {
+    -ms-grid-rows: (auto)[5];
+    -ms-grid-columns: 1fr;
+        grid-template: repeat(5, auto)/1fr;
+  }
+}
+
+@media (min-width: 950px) {
   .faq-section {
     -ms-grid-rows: (auto)[4];
-    -ms-grid-columns: (1fr)[5];
-        grid-template: repeat(4, auto)/repeat(5, 1fr);
+    -ms-grid-columns: 1fr 1.55fr;
+        grid-template: repeat(4, auto)/1fr 1.55fr;
+    gap: 20px;
+    padding-top: 6%;
+  }
+}
+
+@media (min-width: 1350px) {
+  .faq-section {
     gap: 40px;
   }
 }
 
 .faq-section__title {
+  font-size: 27px;
+  font-weight: 800;
+  color: #2c4f80;
+  letter-spacing: 1.3px;
   grid-column: 1 /-1;
   text-align: center;
+}
+
+@media (min-width: 910px) {
+  .faq-section__title {
+    font-size: 36px;
+    margin-top: 0px;
+    margin-bottom: 25px;
+  }
 }
 
 .faq-section article:last-of-type {
@@ -710,21 +747,15 @@ main {
   display: grid;
 }
 
-@media (min-width: 768px) {
-  .faq-section__article {
-    grid-column: span 3;
-  }
-}
-
-@media (min-width: 768px) {
+@media (min-width: 950px) {
   .faq-section__article--tall {
-    grid-area: span 2 / span 2;
+    grid-row: span 2;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 950px) {
   .faq-section__article--wide {
-    grid-column: 1/-1;
+    grid-column: span 2;
   }
 }
 
@@ -734,18 +765,17 @@ main {
   -ms-grid-rows: (auto)[2];
   -ms-grid-columns: 1fr;
       grid-template: repeat(2, auto)/1fr;
-  gap: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 650px) {
   .faq-section__article.multiple-children {
     -ms-grid-rows: auto;
-    -ms-grid-columns: (1fr)[2];
-        grid-template: auto/repeat(2, 1fr);
+    -ms-grid-columns: 1fr 1.2fr;
+        grid-template: auto / 1fr 1.2fr;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 650px) {
   .faq-section__article.multiple-children--wide {
     -ms-grid-rows: auto;
     -ms-grid-columns: 1fr 2fr;
@@ -754,7 +784,27 @@ main {
 }
 
 .faq-section__article__text-wrapper {
-  padding: 8%;
+  padding: 20px 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media (min-width: 1350px) {
+  .faq-section__article__text-wrapper {
+    padding: 40px 60px;
+  }
+}
+
+.faq-section__article__text-wrapper--tall {
+  display: block;
 }
 
 .faq-section__article__text-wrapper__title {
@@ -762,18 +812,60 @@ main {
   font-weight: 500;
   color: #e32700;
   letter-spacing: 0.9px;
+  margin-bottom: 30px;
+}
+
+.faq-section__article__text-wrapper__list {
+  padding-left: 13px;
+}
+
+.faq-section__article__text-wrapper__list__item {
+  font-weight: 700;
+  line-height: 1.75;
+  padding-left: 20px;
+}
+
+@media (min-width: 910px) {
+  .faq-section__article__text-wrapper__list__item {
+    font-size: 16px;
+  }
 }
 
 .faq-section__article__text-wrapper__list__item::marker {
   color: #e32700;
+  font-size: 10px;
 }
 
-.faq-section__article__img-wrapper {
-  max-width: 460px;
+.faq-section__article__text-wrapper p + p {
+  margin-top: 20px;
+}
+
+.faq-section__article__text-wrapper__paragraph {
+  line-height: 1.4;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+@media (min-width: 910px) {
+  .faq-section__article__text-wrapper__paragraph {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 650px) {
+  .faq-section__article__solar-wrapper {
+    -ms-grid-column: 1;
+        grid-column-start: 1;
+    -ms-grid-row: 1;
+        grid-row-start: 1;
+  }
 }
 
 .faq-section__article__solar-system {
-  max-width: 460px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  padding: 30px;
+  overflow: hidden;
   display: -ms-grid;
   display: grid;
   grid: 1fr / 1fr;
@@ -801,17 +893,31 @@ main {
 }
 
 .faq-section__article__solar-system .orb.earth {
-  height: 150px;
-  width: 150px;
+  height: 100px;
+  width: 100px;
   -webkit-animation-duration: 7s;
           animation-duration: 7s;
 }
 
+@media (min-width: 1350px) {
+  .faq-section__article__solar-system .orb.earth {
+    height: 150px;
+    width: 150px;
+  }
+}
+
 .faq-section__article__solar-system .orb.mars {
-  height: 300px;
-  width: 300px;
+  height: 250px;
+  width: 250px;
   -webkit-animation-duration: 10s;
           animation-duration: 10s;
+}
+
+@media (min-width: 1350px) {
+  .faq-section__article__solar-system .orb.mars {
+    height: 300px;
+    width: 300px;
+  }
 }
 
 .faq-section__article__solar-system__sun {
@@ -850,14 +956,6 @@ main {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
-  }
-}
-
-@media (min-width: 768px) {
-  .faq-section__article__solar-system {
-    -webkit-box-ordinal-group: 0;
-        -ms-flex-order: -1;
-            order: -1;
   }
 }
 

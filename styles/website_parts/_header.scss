@@ -3,9 +3,14 @@
   position: relative;
   display: grid;
   grid-template-rows: auto 1fr;
-  min-height: 100vh;
+  min-height: 550px;
+  height: 100vh;
   background-position: center;
   background-size: cover;
+  @media (min-height: 550px) and (max-height: 800px) and (min-width: 500px) {
+    min-height: 120vh;
+    border: solid red 5px;
+  }
 
   &::after {
     position: absolute;
@@ -16,7 +21,7 @@
     border: 20px solid $color--complementary-2;
     width: 160vw;
     height: 122vw;
-    min-height: 770px;
+    min-height: 900px;
     border-inline-start-width: 10px;
     border-inline-end-width: 1px;
     /* width: 200vw;
@@ -119,6 +124,7 @@
     align-items: center;
     justify-content: center;
     height: 48vh;
+    min-height: 250px;
 
     @media (min-width: 700px) {
       margin-right: 16%;
@@ -148,19 +154,19 @@
       margin: 0;
       border-bottom: 4px solid $color--main-1;
 
-      @media (min-width: 500px) {
+      @media (min-width: 570px) {
         width: 440px;
         font-size: 60px;
       }
 
       &.faq {
-        @media (min-width: 500px) {
+        @media (min-width: 570px) {
           width: 511px;
         }
       }
       &.join-crew {
         font-size: 2.5rem;
-        @media (min-width: 550px) {
+        @media (min-width: 570px) {
           width: 470px;
           font-size: 60px;
         }
@@ -173,12 +179,12 @@
       padding-left: 5%;
       margin: 0;
       &.faq {
-        @media (min-width: 500px) {
+        @media (min-width: 570px) {
           width: 515px;
         }
       }
 
-      @media (min-width: 500px) {
+      @media (min-width: 570px) {
         width: 440px;
         font-size: 40px;
         padding-left: unset;
@@ -186,7 +192,7 @@
       &.join-crew {
         margin-bottom: 30px;
         font-size: 1.8rem;
-        @media (min-width: 550px) {
+        @media (min-width: 570px) {
           width: 440px;
           font-size: 40px;
         }
