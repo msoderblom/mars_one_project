@@ -1,0 +1,49 @@
+.navigation {
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  background: $color--nav;
+  padding: 5px 15px;
+
+  @media (min-width: 550px) {
+    padding: 15px 30px;
+  }
+  &__logo-wrapper {
+    width: 58px;
+
+    .logo {
+      @extend %img-settings;
+      object-fit: contain;
+    }
+  }
+  &__link-list {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+
+    margin: 8px 0;
+
+    &__item {
+      padding: 0 5px;
+      margin: 3px 0 3px 8px;
+      padding-top: 8px;
+      font-size: 12px;
+      @media (min-width: 550px) {
+        margin: 0 0 0 30px;
+        font-size: 16px;
+        letter-spacing: 1px;
+      }
+      a {
+        color: $color--main-1;
+        font-weight: bold;
+        text-decoration: none;
+      }
+
+      &--active {
+        border-bottom: 3px solid $color--complementary-1;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
